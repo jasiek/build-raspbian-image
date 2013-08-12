@@ -110,6 +110,9 @@ else
   dd if=/dev/zero of=${device} bs=512 count=1
 fi
 
+# Create primary partition #1
+# Set type of partition to MS DOS
+# Create primary partition #2
 fdisk ${device} << EOF
 n
 p
@@ -165,6 +168,9 @@ mount -t sysfs none ${rootfs}/sys
 mount -o bind /dev ${rootfs}/dev
 mount -o bind /dev/pts ${rootfs}/dev/pts
 mount -o bind ${delivery_path} ${rootfs}/usr/src/delivery
+
+mount
+env
 
 cd ${rootfs}
 
