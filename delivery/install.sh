@@ -10,7 +10,14 @@ echo "Please check environment variables etc, this script can be executed ONLY w
 echo "When tasks done, type \"exit\" to return"
 echo ""
 
-sudo apt-get -y install mg avahi-daemon chromium
+apt-get -y install mg avahi-daemon midori matchbox xinit
 
+# Enable nodm
+echo "NODM_ENABLED=true" >> /etc/default/nodm
 
+adduser --disabled-password --gecos XYZ dashboard
+cp skel/.* /home/dashboard
 
+echo "7:23:respawn:/sbin/getty -a dashboard 38400 tty7" >> /etc/inittab
+
+update-locale LC_ALL=C LANGUAGE=en
