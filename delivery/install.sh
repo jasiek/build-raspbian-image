@@ -10,6 +10,8 @@ echo "Please check environment variables etc, this script can be executed ONLY w
 echo "When tasks done, type \"exit\" to return"
 echo ""
 
+# We need to preconfigure that package manually, otherwise it'll try and display a dialog window.
+dpkg-preconfigure keyboard-configuration --frontend=noninteractive
 apt-get -y install mg avahi-daemon midori matchbox xinit
 
 # Enable nodm
