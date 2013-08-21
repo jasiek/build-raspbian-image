@@ -11,7 +11,8 @@ echo "When tasks done, type \"exit\" to return"
 echo ""
 
 # We need to preconfigure that package manually, otherwise it'll try and display a dialog window.
-dpkg-preconfigure keyboard-configuration --frontend=noninteractive
+# < /dev/null is a workaround for running this command under jenkins.
+dpkg-preconfigure keyboard-configuration --frontend=noninteractive < /dev/null
 apt-get -y install mg avahi-daemon midori matchbox xinit
 
 # Enable nodm
