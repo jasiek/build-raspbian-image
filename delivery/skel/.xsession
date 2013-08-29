@@ -7,5 +7,7 @@ xset s off
 
 sleep 10
 
-/usr/bin/midori -e Fullscreen --app=http://dashboard.dsd.io/
+/usr/bin/midori -e Fullscreen --app=http://jasiek.github.io/raspberry-dashboard/start
+
+
 
