@@ -15,9 +15,6 @@ echo ""
 dpkg-preconfigure keyboard-configuration --frontend=noninteractive < /dev/null
 apt-get -y install mg avahi-daemon midori matchbox xinit
 
-# Enable nodm
-echo "NODM_ENABLED=true" >> /etc/default/nodm
-
 adduser --disabled-password --gecos XYZ dashboard
 cp skel/.* /home/dashboard
 
