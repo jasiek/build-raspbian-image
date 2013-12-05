@@ -13,7 +13,7 @@ echo ""
 # We need to preconfigure that package manually, otherwise it'll try and display a dialog window.
 # < /dev/null is a workaround for running this command under jenkins.
 dpkg-preconfigure keyboard-configuration --frontend=noninteractive < /dev/null
-apt-get -y install mg avahi-daemon midori matchbox xinit
+apt-get -y install mg avahi-daemon midori matchbox xinit wpasupplicant firmware-ralink
 
 adduser --disabled-password --gecos XYZ dashboard
 cp skel/.* /home/dashboard
